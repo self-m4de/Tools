@@ -3,51 +3,48 @@
 home='cd /opt'
 
 `echo $home`
-# dirsearch
-git clone https://github.com/maurosoria/dirsearch
+mkdir -p ~/htb ~/thm ~/ospg vpn
+mkdir -p priv_esc/peas priv_esc/linux priv_esc/windows vpn win_AD php
 # WPScan
 git clone https://github.com/wpscanteam/wpscan
-# DNSRecon
-git clone https://github.com/darkoperator/dnsrecon
 # Gobuster
-git clone https://github.com/OJ/gobuster
-cd gobuster
-apt install golang
-make
-export PATH=$PATH:/opt/gobuster
-`echo $home`
+apt-get install gobuster
 # Powersploit
-https://github.com/PowerShellMafia/PowerSploit/tree/master/Recon
+cd priv_esc; git clone https://github.com/PowerShellMafia/PowerSploit/tree/master/Recon; `echo $home`
 # LinEnum
-mkdir -p priv_esc/linux; cd priv_esc/linux
-git clone https://github.com/rebootuser/LinEnum
+cd priv_esc/linux; git clone https://github.com/rebootuser/LinEnum
 # linux-exploit-suggest.sh
-git clone https://github.com/mzet-/linux-exploit-suggester
+git clone https://github.com/mzet-/linux-exploit-suggester; `echo $home`
 # Windows Exploit Suggester
-git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester
+cd priv_esc/windows; git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester
 # Empire
-mkdir priv_esc/windows; cd priv_esc/windows
-git clone https://github.com/EmpireProject/Empire
-`echo $home`
+git clone https://github.com/EmpireProject/Empire; `echo $home`
 # Autorecon
 git clone https://github.com/Tib3rius/AutoRecon
 # Evil-winrm
-git clone https://github.com/Hackplayers/evil-winrm
-# Juicy Potato
-git clone https://github.com/ohpe/juicy-potato 
+cd win_AD; git clone https://github.com/Hackplayers/evil-winrm; `echo $home`
+# Juicy Exploits
+cd priv_esc/windows; git clone https://github.com/ohpe/juicy-potato
+git clone https://github.com/antonioCoco/RoguePotato; `echo $home`
 # Unicorn
 git clone https://github.com/trustedsec/unicorn
 # PrintSpoofer
 git clone https://github.com/itm4n/PrintSpoofer
-# Reverse Shell Generator - rsg
-git clone https://github.com/mthbernardes/rsg
 # Peas
-git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
-# sshng2john
-wget https://raw.githubusercontent.com/stricture/hashstack-server-plugin-jtr/master/scrapers/sshng2john.py
-# Impacket
-git clone https://github.com/SecureAuthCorp/impacket
+cd priv_esc/peas; git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite; `echo $home`
 # Joomscan
 git clone https://github.com/rezasp/joomscan.git
 # SMTP User Enum
 git clone https://github.com/pentestmonkey/smtp-user-enum
+# Pentest Monkey PHP Reverse Shell
+cd php; wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php; `echo $home`
+# Chisel
+git clone https://github.com/jpillora/chisel
+# Nishang
+cd win_AD; git clone https://github.com/samratashok/nishang; `echo $home`
+# Kerbrute
+go get github.com/ropnop/kerbrute
+# Linux Smart Enumeration
+cd priv_esc/linux; wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh; `echo $home`
+# Enum4linux-ng
+cd win_AD; git clone https://github.com/cddmp/enum4linux-ng; `echo $home`
